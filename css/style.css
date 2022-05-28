@@ -1,3 +1,8 @@
+@font-face {
+    font-family: odin-font;
+    src: url(../Norse-Bold.otf);
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -44,50 +50,71 @@ table {
 }
 
 .left-column{
+    flex-shrink: 0.1;
+    width: 35vw;
     position: relative;
-    width: 40%;
     overflow: hidden;
     display: flex;
     justify-content: center; 
     align-items: center;
 }
 
+.img-background{
+    min-height: 710px;
+    height: 100vh;
+    width: auto;
+}
+ 
 .logo-container{
     position: absolute;
-    top: 120px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top: 80px;
     height: 170px;
     width: 100%;
     background-color: white;
-    opacity: 0.2;
+    opacity: 0.45;
+    font-size: 60px;
+    font-family: odin-font;
+    gap:20px;
+    color: black;
+}
+
+.img-logo{
+    display: block;
+    height: 70%;
+    background: none;
 }
 
 .right-column{
-   flex: 1;
    display: flex;
    flex-direction: column;
 }
 
-.box{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-img{
-    height: 100vh;
-    min-height: 700px;
-    width: auto;
-}
-
 .header{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     background-color: #7fc4e4;
+    padding: 25px 50px;
+}
+
+.header p{
+    font-size: 22px;
+    min-width: 15ch;
+    max-width: 75ch;
+    color: rgba(12, 12, 12, 0.781);
+}
+
+.header-text-2{
+    margin-top: 20px;
 }
 
 .main{
+    padding: 25px 50px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -98,14 +125,60 @@ img{
     box-shadow: 0 8px 8px -2px rgba(70, 70, 70, 0.25),0 -8px 8px -2px rgba(70, 70, 70, 0.25);
 }
 
-.form{
+.main-text{
+    padding-bottom: 15px;
+    font-size: 22px;
+    color: rgba(12, 12, 12, 0.781);
+}
+
+.grid-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+}
+
+.box{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    color: rgba(12, 12, 12, 0.781);
+}
+
+input{
+    margin-top:7px;
+    border-color: #E5E7EB;
+    border-width: 1px;
+    height: 25px;
+    border-radius: 5px;
+    width: 200px;
+}
+
+input:focus{
+    outline: none;
+    border-color: #7fc4e4;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 0 8px 8px -2px rgba(70, 70, 70, 0.25);
+}
+
+.password{
+    display: none;
+    color: rgba(255, 0, 0, 0.849);
+}
+
+.error{
+    display: inline;
+    border-color: rgba(255, 0, 0, 0.849);
+}
+
+.error-text-wrapp{
+    min-height: 18px;
+    padding-top: 5px;
 }
 
 .footer{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     height: 200px;
     background-color: #ffb703;
 }
@@ -117,19 +190,11 @@ button{
     border-radius: 20px;
     background-color: #7fc4e4;
     border-style: none;
+    color: rgba(12, 12, 12, 0.881);
     box-shadow: 0 8px 8px -2px rgba(70, 70, 70, 0.25);
 }
 
-.header p{
-    margin: 0;
-    padding: 30px;
-    font-size: 22px;
-    min-width: 30ch;
-    max-width: 75ch;
-    color: rgb(12, 12, 12);
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 830px) {
     body{
         flex-direction: column;
     }
@@ -148,8 +213,11 @@ button{
         justify-content: center;
     }
 
-    .form{
+    .main{
+        align-items: center;
+    }
 
+    .grid-container{
         grid-template-columns: repeat(1, 1fr);
     }
 }

@@ -5,50 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Log in</title>
+    <title>Sign up</title>
 </head>
 <body>
     <div class="left-column">
-        <div class="logo-container"></div>
-        <img src="img/background2.jpg" alt="">
+        <div class="logo-container">
+            <img class="img-logo" src="img/logo.png" alt="logo">GUITAR
+        </div>
+       <img class="img-background" src="img/background.jpg" alt="background">
     </div>
     <div class="right-column">
         <div class="header">
-            <p>This is not a real online service! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, commodi! Sign up now to get started.</p>
-            <p>You <em>know</em> you want to.</p>
+            <p class="header-text-1">This is not a real online service! You know you need something help you realize your deepest dreams. Sign up now to get started.</p>
+            <p class="header-text-2">You <em>know</em> you want to.</p>
         </div>
         <div class="main">
-            <p>Let's do this!</p>
-            <div class="form">
-                <div class="box">
-                    <label for="first_name">FIRST NAME</label>
-                    <input type="text" name="name" id="first_name">
+            <p class="main-text">Let's do this!</p>
+            <form id="form-1" action="#" method="post">
+                <div class="grid-container">
+                    <div class="box">
+                        <label for="first_name">FIRST NAME</label>
+                        <input type="text" name="name" id="first_name" required>
+                    </div>
+                    <div class="box">
+                        <label for="last_name">LAST NAME</label>
+                        <input type="text" name="surename" id="last_name" required>
+                    </div>
+                    <div class="box">
+                        <label for="user_email">EMAIL</label>
+                        <input type="email" name="email" id="user_email" required>
+                    </div>
+                    <div class="box">
+                        <label for="user_number">PHONE NUMBER</label>
+                        <input type="text" name="number" id="user_number" required>
+                    </div>
+                    <div class="box">
+                        <label  for="user_password">PASSWORD</label>
+                        <input class="error" type="password" name="password" id="user_password" required>
+                    </div>
+                    <div class="box">
+                        <label  for="user_password_repeat">CONFIRM PASSWORD</label>
+                        <input class="error" type="password" name="password_repeat" id="user_password_repeat" required>
+                    </div>
+                    <div class="error-text-wrapp">
+                        <p class="password error">* Passwords do not match</p>
+                    </div>
                 </div>
-                <div class="box">
-                    <label for="last_name">LAST NAME</label>
-                    <input type="text" name="surename" id="last_name">
-                </div>
-                <div class="box">
-                    <label for="user_email">EMAIL</label>
-                    <input type="email" name="email" id="user_email">
-                </div>
-                <div class="box">
-                    <label for="user_number">PHONE NUMBER</label>
-                    <input type="number" name="number" id="user_number">
-                </div>
-                <div class="box">
-                    <label for="user_password">PASSWORD</label>
-                    <input type="password" name="password" id="user_password">
-                </div>
-                <div class="box">
-                    <label for="user_password_repeat">CONFIRM PASSWORD</label>
-                    <input type="password" name="password_repeat" id="user_password_repeat">
-                </div>
-            </div>
+            </form>
         </div>
         <div class="footer">
-            <button>Create account</button>
+            <button type="submit" form="form-1">Create account</button>
         </div>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
