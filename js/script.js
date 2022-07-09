@@ -19,4 +19,4 @@ passwordRepeatInput.addEventListener("input", checkPassword);
 let passwordInput = document.querySelector("#user_password");
 passwordInput.addEventListener("input", checkPassword);
 
-let errorText = document.querySelector(".pass");
+let errorText = document.querySelector(".password");
